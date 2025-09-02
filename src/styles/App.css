@@ -1,0 +1,143 @@
+/* 카드가 텍스트가 없어도 항상 화면에 꽉 차게 보이도록 */
+.card {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+@media (max-width: 600px) {
+    .card {
+        min-height: 220px;
+    }
+}
+.card-text {
+    white-space: pre-line;
+}
+.app {
+    margin: 0 auto;
+    padding: 32px;
+    font-family: "Noto Sans KR", "Arial", sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    min-height: 100vh;
+    padding-bottom: 32px;
+}
+
+.place-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 24px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.place-title-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 24px;
+}
+.place-title-image {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding-right: 16px;
+}
+.place-title-name {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-left: 16px;
+}
+.place-image {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    background: #fff;
+}
+.place-title-name h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #343a40;
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+}
+.place-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+    background: #fff;
+}
+.lang-btn,
+.home-btn {
+    background: none !important;
+    border: none !important;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-left: 8px;
+    color: #212529;
+    box-shadow: none !important;
+}
+.lang-btn:hover,
+.home-btn:hover {
+    background: none !important;
+    box-shadow: none !important;
+}
+.place-audio {
+    width: 100%;
+    margin-bottom: 16px;
+}
+.place-desc {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    white-space: pre-line;
+    color: #212529;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.place-map {
+    display: block;
+    color: #1976d2;
+    text-decoration: underline;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+html,
+body {
+    background: #f8f9fa;
+    color: #222;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 600px) {
+    .app {
+        max-width: 100vw;
+        padding: 8px;
+        font-size: 16px;
+        background: #fff;
+        color: #222;
+    }
+}
