@@ -16,40 +16,39 @@ function PlaceDetail({ place, language, onHome, onLang }) {
 
     return (
         <div className="place-detail">
-            <nav aria-label="breadcrumb">
-                <ol className="breadcrumb d-flex justify-content-between align-items-center">
-                    <li>
-                        <button
-                            className="lang-btn btn btn-link"
-                            onClick={onLang}
-                            style={{
-                                fontSize: "24px",
-                                textDecoration: "none",
-                                background: "none",
-                                border: "none",
-                                padding: 0,
-                            }}
-                        >
-                            {language === "ko" ? "🇺🇸" : "🇰🇷"}
-                        </button>
-                    </li>
-                    <li className="ms-auto">
-                        <button
-                            className="btn btn-link"
-                            onClick={onHome}
-                            style={{
-                                fontSize: "20px",
-                                textDecoration: "none",
-                                background: "none",
-                                border: "none",
-                                padding: 0,
-                                color: "#222",
-                            }}
-                        >
-                            Home
-                        </button>
-                    </li>
-                </ol>
+            {/* 네비게이션: 왼쪽 언어 아이콘, 오른쪽 Home 버튼 */}
+            <nav
+                aria-label="breadcrumb"
+                className="d-flex justify-content-between align-items-center"
+                style={{ marginBottom: "1rem" }}
+            >
+                <button
+                    className="lang-btn btn btn-link"
+                    onClick={onLang}
+                    style={{
+                        fontSize: "24px",
+                        textDecoration: "none",
+                        background: "none",
+                        border: "none",
+                        padding: 0,
+                    }}
+                >
+                    {language === "ko" ? "🇺🇸" : "🇰🇷"}
+                </button>
+                <button
+                    className="btn btn-link"
+                    onClick={onHome}
+                    style={{
+                        fontSize: "20px",
+                        textDecoration: "none",
+                        background: "none",
+                        border: "none",
+                        padding: 0,
+                        color: "#222",
+                    }}
+                >
+                    Home
+                </button>
             </nav>
             <div className="card mb-3">
                 <h3 className="card-header">
