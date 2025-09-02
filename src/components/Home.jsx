@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Home({ places, onSelect, language }) {
+export default function Home({ places, language }) {
+    const navigate = useNavigate();
     const intro = places.find((p) => p.id === "00");
     const walkList = places.filter((p) => p.id.startsWith("w"));
     const rideList = places.filter((p) => p.id.startsWith("r"));
@@ -9,7 +11,7 @@ export default function Home({ places, onSelect, language }) {
     const PlaceBtn = ({ place }) => (
         <button
             className="btn btn-light d-block w-100 mb-3 text-start"
-            onClick={() => (window.location.href = `/place/${place.id}`)}
+            onClick={() => navigate(`/place/${place.id}`)}
         >
             <img
                 src={basePath + place.image}
@@ -24,7 +26,6 @@ export default function Home({ places, onSelect, language }) {
 
     return (
         <div className="container py-4">
-            {/* 언어 변경 버튼 완전히 제거 */}
             <div className="row mb-4">
                 <div className="col-12 col-md-6 mx-auto">
                     {intro && <PlaceBtn place={intro} />}
