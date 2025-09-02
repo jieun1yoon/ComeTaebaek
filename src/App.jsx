@@ -1,37 +1,56 @@
 import React, { useState } from "react";
-import placesData from "./data/places.json";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import PlaceDetail from "./components/PlaceDetail";
+import placesData from "./data/places.json";
 import "./styles/bootstrap.css";
 
 function App() {
     const [language, setLanguage] = useState("ko");
-    const [selectedId, setSelectedId] = useState(null);
-
-    const handleSelect = (id) => setSelectedId(id);
-    const handleHome = () => setSelectedId(null);
-    const handleLang = () => setLanguage(language === "ko" ? "en" : "ko");
-
-    const place = placesData.find((p) => p.id === selectedId);
 
     return (
-        <div className="app">
-            {selectedId ? (
-                <PlaceDetail
-                    place={place}
-                    language={language}
-                    onHome={handleHome}
-                    onLang={handleLang}
+        <BrowserRouter basename={import.meta.env.BASE_URL || "/ComeTaebaek/"}>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <Home
+                            places={placesData}
+                            onSelect={(id) =>
+                                (window.location.href = `/place/${id}`)
+                            }
+                            language={language}
+                        />
+                    }
                 />
-            ) : (
-                <Home
-                    places={placesData}
-                    language={language}
-                    onSelect={handleSelect}
-                    onLang={handleLang}
+                <Route
+                    path="/place/:id"
+                    element={
+                        <PlaceDetailWrapper
+                            language={language}
+                            setLanguage={setLanguage}
+                        />
+                    }
                 />
-            )}
-        </div>
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+// 장소 상세페이지용 래퍼
+import { useParams, useNavigate } from "react-router-dom";
+function PlaceDetailWrapper({ language, setLanguage }) {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const place = placesData.find((p) => p.id === id);
+
+    return (
+        <PlaceDetail
+            place={place}
+            language={language}
+            onHome={() => navigate("/")}
+            onLang={() => setLanguage(language === "ko" ? "en" : "ko")}
+        />
     );
 }
 
