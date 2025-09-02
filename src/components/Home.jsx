@@ -2,10 +2,12 @@ import React from "react";
 import placesData from "../data/places.json";
 
 export default function Home({ onSelect, language }) {
-    // 분류
     const intro = placesData.find((p) => p.id === "00");
     const walkList = placesData.filter((p) => p.id.startsWith("w"));
     const rideList = placesData.filter((p) => p.id.startsWith("r"));
+
+    // Vite base 경로 처리
+    const basePath = import.meta.env.BASE_URL || "/ComeTaebaek/";
 
     // 버튼 컴포넌트 (섬네일 이미지 height만 고정)
     const PlaceBtn = ({ place }) => (
@@ -29,7 +31,7 @@ export default function Home({ onSelect, language }) {
         >
             {/* 섬네일 이미지: 높이만 고정, 가로는 원본 비율 */}
             <img
-                src={place.image}
+                src={basePath + place.image}
                 alt={place.name_ko}
                 style={{
                     height: "64px",
