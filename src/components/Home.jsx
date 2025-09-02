@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Home({ places, onSelect, language, onLang }) {
+export default function Home({ places, onSelect, language }) {
     const intro = places.find((p) => p.id === "00");
     const walkList = places.filter((p) => p.id.startsWith("w"));
     const rideList = places.filter((p) => p.id.startsWith("r"));
@@ -24,15 +24,7 @@ export default function Home({ places, onSelect, language, onLang }) {
 
     return (
         <div className="container py-4">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-                <button
-                    className="btn btn-link fs-3 p-0"
-                    onClick={onLang}
-                    aria-label="언어 변경"
-                >
-                    {language === "ko" ? "🇺🇸" : "🇰🇷"}
-                </button>
-            </div>
+            {/* 언어 변경 버튼 완전히 제거 */}
             <div className="row mb-4">
                 <div className="col-12 col-md-6 mx-auto">
                     {intro && <PlaceBtn place={intro} />}

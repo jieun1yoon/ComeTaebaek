@@ -14,20 +14,20 @@ function PlaceDetail({ place, language, onHome, onLang }) {
         <div className="container my-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <button
-                    className="btn btn-link fs-3 p-0"
+                    className="btn btn-outline-light fs-3 p-0"
                     onClick={onLang}
                     aria-label="언어 변경"
                 >
                     {language === "ko" ? "🇺🇸" : "🇰🇷"}
                 </button>
                 <button
-                    className="btn btn-link fs-4 p-0 text-dark"
+                    className="btn btn-light fs-4 p-0 text-dark"
                     onClick={onHome}
                 >
                     Home
                 </button>
             </div>
-            <div className="card mb-3">
+            <div className="card border-light mb-3">
                 <h3 className="card-header">
                     {language === "ko" ? place.name_ko : place.name_en}
                 </h3>
