@@ -9,7 +9,7 @@ export default function Home({ places, onSelect, language }) {
     const PlaceBtn = ({ place }) => (
         <button
             className="btn btn-light d-block w-100 mb-3 text-start"
-            onClick={() => onSelect(place.id)}
+            onClick={() => (window.location.href = `/place/${place.id}`)}
         >
             <img
                 src={basePath + place.image}
