@@ -4,9 +4,15 @@ import "./PlaceDetail.css";
 function PlaceDetail({ place, language, onHome, onLang }) {
     if (!place) return null;
 
-    // 언어별 오디오/이미지
-    const audioSrc = language === "en" ? place.audio_en : place.audio_ko;
-    const imageSrc = place.image;
+    // Vite base 경로 처리
+    const basePath = import.meta.env.BASE_URL || "/ComeTaebaek/";
+
+    // 언어별 오디오/이미지 경로(base 포함)
+    const audioSrc =
+        language === "en"
+            ? basePath + place.audio_en.replace(/^\//, "")
+            : basePath + place.audio_ko.replace(/^\//, "");
+    const imageSrc = basePath + place.image.replace(/^\//, "");
 
     return (
         <div className="place-detail">
