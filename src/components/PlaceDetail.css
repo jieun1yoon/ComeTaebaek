@@ -15,14 +15,17 @@
     align-items: center;
 }
 .place-image {
-    width: 150px;
-    height: 150px;
+    display: block;
+    margin: 0 auto 2rem;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 0;
 }
 .place-detail {
-    padding: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 .place-header {
     display: flex;
@@ -32,28 +35,31 @@
     gap: 8px;
 }
 .lang-btn {
-    margin-right: auto;
-}
-.home-btn,
-.lang-btn {
+    font-size: 24px;
     background: none;
     border: none;
-    font-size: 24px;
+    color: #222;
     cursor: pointer;
+    padding: 0;
+}
+.home-btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #222;
+    cursor: pointer;
+    padding: 0;
 }
 .place-audio {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 2rem;
 }
 .place-desc {
-    line-height: 1.7;
-    font-size: 18px;
-    margin-bottom: 16px;
     white-space: pre-line;
+    font-size: 1.05rem;
+    color: #222;
+    margin-bottom: 2rem;
 }
 .place-map {
-    display: block;
-    color: #1976d2;
-    text-decoration: underline;
-    margin-top: 8px;
+    margin-bottom: 2rem;
 }
