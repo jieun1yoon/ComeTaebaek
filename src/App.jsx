@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import placesData from "./data/places.json";
 import Home from "./components/Home";
 import PlaceDetail from "./components/PlaceDetail";
-import "./styles/App.css";
+import "./styles/bootstrap.css";
 
 function App() {
     const [language, setLanguage] = useState("ko");

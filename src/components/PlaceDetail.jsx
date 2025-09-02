@@ -1,5 +1,4 @@
 import React from "react";
-import "./PlaceDetail.css";
 
 function PlaceDetail({ place, language, onHome, onLang }) {
     if (!place) return null;
@@ -13,7 +12,6 @@ function PlaceDetail({ place, language, onHome, onLang }) {
 
     return (
         <div className="container my-4">
-            {/* 네비게이션: 왼쪽 언어 아이콘, 오른쪽 Home 버튼 */}
             <div className="d-flex justify-content-between align-items-center mb-3">
                 <button
                     className="btn btn-link fs-3 p-0"
