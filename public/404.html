@@ -1,7 +1,9 @@
 <script>
-    // 현재 경로를 그대로 유지해서 리다이렉트
-    var pathname = location.pathname.replace(/^\/ComeTaebaek\//, "");
+    // 경로 전체를 유지해서 리다이렉트
     location.replace(
-        "/ComeTaebaek/" + pathname + location.search + location.hash
+        "/ComeTaebaek/" +
+            location.pathname.replace(/^\/ComeTaebaek\//, "") +
+            location.search +
+            location.hash
     );
 </script>
