@@ -3,12 +3,11 @@ import React from "react";
 function PlaceDetail({ place, language, onHome, onLang }) {
     if (!place) return null;
 
-    const basePath = import.meta.env.BASE_URL || "/ComeTaebaek/";
+    const imageSrc = `/images/${place.image.replace(/^\/|images\//, "")}`;
     const audioSrc =
         language === "en"
             ? `/audio/${place.audio_en.replace(/^\/|audio\//, "")}`
             : `/audio/${place.audio_ko.replace(/^\/|audio\//, "")}`;
-    const imageSrc = `/images/${place.image.replace(/^\/|images\//, "")}`;
 
     return (
         <div className="container my-4">

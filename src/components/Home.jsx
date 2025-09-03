@@ -6,7 +6,6 @@ export default function Home({ places, language }) {
     const intro = places.find((p) => p.id === "00");
     const walkList = places.filter((p) => p.id.startsWith("w"));
     const rideList = places.filter((p) => p.id.startsWith("r"));
-    const basePath = import.meta.env.BASE_URL || "/ComeTaebaek/";
 
     const PlaceBtn = ({ place }) => (
         <button
