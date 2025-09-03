@@ -11,7 +11,7 @@ export default function Home({ places, language }) {
     const PlaceBtn = ({ place }) => (
         <button
             className="btn btn-light d-block w-100 mb-3 text-start"
-            onClick={() => navigate(`/place/${place.id}`)}
+            onClick={() => navigate(`/${place.id}`)}
         >
             <img
                 src={basePath + place.image}

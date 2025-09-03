@@ -16,7 +16,7 @@ function App() {
                     element={<Home places={placesData} language={language} />}
                 />
                 <Route
-                    path="/place/:id"
+                    path="/:id"
                     element={
                         <PlaceDetailWrapper
                             language={language}
