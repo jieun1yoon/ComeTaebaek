@@ -9,7 +9,7 @@ function App() {
     const [language, setLanguage] = useState("ko");
 
     return (
-        <BrowserRouter basename={import.meta.env.BASE_URL || "/ComeTaebaek/"}>
+        <BrowserRouter basename="/ComeTaebaek/">
             <Routes>
                 <Route
                     path="/"
