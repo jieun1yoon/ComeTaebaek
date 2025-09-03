@@ -6,9 +6,9 @@ function PlaceDetail({ place, language, onHome, onLang }) {
     const basePath = import.meta.env.BASE_URL || "/ComeTaebaek/";
     const audioSrc =
         language === "en"
-            ? basePath + place.audio_en.replace(/^\//, "")
-            : basePath + place.audio_ko.replace(/^\//, "");
-    const imageSrc = basePath + place.image.replace(/^\//, "");
+            ? `/audio/${place.audio_en.replace(/^\/|audio\//, "")}`
+            : `/audio/${place.audio_ko.replace(/^\/|audio\//, "")}`;
+    const imageSrc = `/images/${place.image.replace(/^\/|images\//, "")}`;
 
     return (
         <div className="container my-4">

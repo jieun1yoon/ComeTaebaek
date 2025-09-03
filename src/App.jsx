@@ -8,7 +8,7 @@ import "./styles/bootstrap.css";
 function App() {
     const [language, setLanguage] = useState("ko");
     return (
-        <BrowserRouter basename="/ComeTaebaek/">
+        <BrowserRouter basename="">
             <Routes>
                 <Route
                     path="/"

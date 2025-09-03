@@ -14,7 +14,7 @@ export default function Home({ places, language }) {
             onClick={() => navigate(`/${place.id}`)}
         >
             <img
-                src={basePath + place.image}
+                src={`/images/${place.image.replace(/^\/|images\//, "")}`}
                 alt={place.name_ko}
                 className="img-fluid rounded mb-2"
                 style={{ height: "64px", width: "auto", objectFit: "contain" }}
